@@ -1,0 +1,456 @@
+@mixin flex($wrap, $align, $justify) {
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+source {
+    width: fit-content;
+}
+
+// CSS HEADER
+
+.header {
+    @include flex(wrap, center, space-between);
+    margin-top: 1vh;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.header_logo {
+    padding-left: 4rem;
+    width: 14rem;
+}
+
+.header_menu {
+    @include flex(wrap, center, center);
+    padding-right: 4rem;
+
+    ul {
+      margin-top: -0.5rem;
+
+        li {
+            display: inline-block;
+            padding: 1rem 3rem;
+            
+            a {
+                color: black;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            a:hover {
+                color: brown;
+            }
+        }
+    }
+}
+
+
+
+
+// CSS VIDEO
+
+.main_contenedorVideo {
+    position: absolute;
+    width: 100%;
+    height: 89.3vh;
+    overflow: hidden;
+    border-top: 2px solid brown;
+}
+
+.video {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 89.3vh;
+    object-fit: cover;
+}
+
+.main_contenedorTitulo {
+    @include flex(wrap, center, center);
+    flex-direction: column;
+    text-align: center;
+    height: 89.3vh;
+}
+
+.main_contenedorTitulo_titulo {
+    font-size: 5vw;
+    color: white;
+    padding-bottom: 1rem;
+    -webkit-text-stroke: 0.1rem brown;
+}
+
+.main_contenedorTitulo_subtitulo {
+    font-size: 2.5vw;
+    color: white;
+    -webkit-text-stroke: 0.05rem brown;
+}
+
+
+  
+// CSS CARRUSEL ESCENARIOS
+
+.main_contenedorCarrusel {
+  display: flex;
+  width: 99.4vw;
+  height: 68vh;
+}
+
+.carousel_bloque {
+  width: 40vw;
+  height: 68vh;
+  background-color: #9c7867;
+  
+  @include flex(wrap, center, center);
+  flex-direction: column;
+}
+
+.bloque_Titulo {
+  padding: 0vh 0vw 4vh 0vw;
+  font-size: 3.3vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bloque_Texto {
+  text-align: justify;
+  padding: 1vh 2vw;
+  font-size: 1.4vw;
+}
+
+.carousel {
+  position: relative;
+  width: 60vw;
+  height: 68vh;
+
+  img {
+    width: 100%;
+    height: 68vh;
+    object-position: center center;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 46%;
+  padding: 0;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  line-height: 24px;
+  color: #444;
+  display: block;
+
+  :focus {
+    outline: none;
+  }
+
+  :hover {
+    background: #ccc;
+    cursor: pointer;
+  }
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  ul {
+    height: 130px;
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+    font-size: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+}
+
+
+// CSS PERSONAJES
+
+.main_personajes_element2 {
+  display: none;
+}
+
+.main_personajes {
+  @include flex(wrap, center, center);
+  width: 100%;
+
+  .carousel_bloque2 {
+    width: 43.6vw;
+    height: 60vh;
+  }
+}
+
+.main_personajes_element {
+  @include flex(wrap, center, center);
+
+  img {
+    height: 40vh;
+  }
+}
+
+.carousel_bloque2 {
+  background-color: #9c7867;
+  @include flex(wrap, center, center);
+  flex-direction: column;
+}
+
+.bloque_Titulo2 {
+  padding: 0vh 0vw 4vh 0vw;
+  font-size: 3.3vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bloque_Texto2 {
+  text-align: justify;
+  padding: 1vh 2vw;
+  font-size: 1.4vw;
+}
+
+// CSS FOOTER
+
+.footer {
+  @include flex(wrap, center, space-between);
+  width: 100%;
+  border-top: 2px solid brown;
+  padding-top: 1vh;
+}
+
+.footer_logo {
+  padding-left: 4rem;
+  width: 14rem;
+}
+
+.footer_menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding-right: 4rem;
+
+  ul {
+    margin-top: -0.5rem;
+
+      li {
+          display: inline-block;
+          padding: 1rem 3rem;
+          
+          a {
+              color: black;
+              text-decoration: none;
+              font-size: 1.3rem;
+              font-weight: bold;
+          }
+
+          a:hover {
+              color: brown;
+          }
+      }
+  }
+}
+
+
+@media (max-width: 1465px) {
+  .footer_menu {
+    padding-right: 1rem;
+
+    ul {
+
+        li {
+            padding: 1rem 1rem;
+
+            a {
+                font-size: 1.4vw;
+            }
+        }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .main_personajes_element {  
+    img {
+      height: 28vh;
+    }
+  }
+
+  .footer_logo {
+    padding-left: 1rem;
+    width: 9rem;
+  }
+
+  .bloque_Titulo {
+    padding: 0vh 0vw 4vh 0vw;
+    font-size: 4.3vw;
+  }
+  
+  .bloque_Texto {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+
+  .bloque_Titulo2 {
+    padding: 0vh 0vw 4vh 0vw;
+    font-size: 4.3vw;
+  }
+  
+  .bloque_Texto2 {
+    padding: 1vh 2vw;
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 770px) {
+  // CSS HEADER
+  .header_menu {
+    padding-right: 1rem;
+
+    ul {
+
+        li {
+            padding: 1rem 1rem;
+
+            a {
+                font-size: 0.8rem;
+            }
+        }
+    }
+  }
+
+  .footer_menu {
+    ul {
+      padding-right: 0.3rem;
+
+        li {
+          padding: 1rem 0.3rem;
+
+            a {
+                font-size: 1.6vw;
+            }
+        }
+    }
+  }
+
+  .header_logo {
+    padding-left: 1rem;
+    width: 9rem;
+  }
+
+  .footer_logo {
+    padding-left: 0.3rem;
+    width: 6rem;
+  }
+
+  .main_contenedorTitulo_titulo {
+    font-size: 8vw;
+  }
+
+  .main_contenedorTitulo_subtitulo {
+      font-size: 3vw;
+  }  
+
+  // CSS CORRUSEL
+
+  .main_contenedorCarrusel {
+    height: 65vh;
+    flex-direction: column-reverse;
+  }
+
+  .carousel {
+    width: 100%;
+
+    img {
+      height: 100%;
+    } 
+  }
+
+  .carousel_bloque {
+    width: 100%;
+    height: 43vh;
+  }
+
+  // CSS PERSONAJES
+
+  .main_personajes_element {
+    display: none;
+  }
+
+  .main_personajes_element2 {
+    @include flex(wrap, center, center);
+  }
+
+  .main_personajes .carousel_bloque2 {
+    width: 100%;
+    height: 30vh;
+  }
+/* 
+  .main_personajes_element2 img {
+    height: 30vw;
+  } */
+}
+
+@media (max-width: 550px) {
+  .footer_logo {
+    display: none;
+  }
+
+  .footer_menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    ul {
+
+        li {
+          padding: 1rem 0.5rem;
+
+            a {
+                font-size: 2vw;
+            }
+        }
+    }
+  }
+
+  .carousel_bloque {
+    height: 70vh;
+  }
+
+  .bloque_Texto {
+    font-size: 2.5vw;
+  }
+
+  .bloque_Texto2 {
+    font-size: 2.5vw;
+  }
+
+  .main_contenedorCarrusel {
+    height: 52vh;
+    flex-direction: column-reverse;
+  }
+}

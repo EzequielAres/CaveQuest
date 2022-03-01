@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf_8">
+    <title>Cave Quest</title>
+    <link rel="stylesheet" href="/index.41d2816d.css">
+  </head>
+  <body>
+    <header class="header">
+      <img class="header_logo" src="/logo.5b34b4d1.svg" alt="Logo">
+      <section class="header_menu">
+        <ul>
+          <li><a href="#escenarios">Escenarios</a></li>
+          <li><a href="#personajes">Personajes</a></li>
+        </ul>
+      </section>
+    </header>
+    <main>
+      <section class="main_contenedorVideo">
+        <video autoplay="" loop="" class="video">
+          <source src="/video2.7a1c9d8e.mp4" type="video/mp4">
+          <source src="/video2.c7bcca54.webm" type="video/webm">
+          <img src="/placeholder.3f4524c2.png" alt="Video no soportado">
+          Su navegador no soporta contenido multimedia
+        </video>
+      </section>
+      <section class="main_contenedorTitulo">
+        <h1 class="main_contenedorTitulo_titulo">CAVE QUEST</h1>
+        <h2 class="main_contenedorTitulo_subtitulo">Una aventura de plataformas con estética pixel art </h2>
+      </section>
+
+
+      <section class="main_contenedorCarrusel" id="escenarios">
+        <div id="carousel" class="carousel">
+          <button class="arrow prev" onclick="anteriorImagen()">⇦</button>
+          <div class="gallery">
+            <ul class="images">
+                
+                <li><img srcset="/escenario1-400w.7657068d.png 400w,/escenario1-800w.a21937dd.png 800w" sizes="(max-width: 500px) 500px,
+                                800px" src="/escenario1-800w.a21937dd.png" alt="Escenario1"></li>
+                <li><img srcset="/escenario2-400w.8d9dc31d.png 400w,/escenario2-800w.96b241b1.png 800w" sizes="(max-width: 500px) 500px,
+                                800px" src="/escenario2-800w.96b241b1.png" alt="Escenario2"></li>
+                <li><img srcset="/escenario3-400w.e5cc76d4.png 400w,/escenario3-800w.d04b6ed5.png 800w" sizes="(max-width: 500px) 500px,
+                                800px" src="/escenario3-800w.d04b6ed5.png" alt="Escenario3"></li>
+            </ul>
+          </div>
+          <button class="arrow next" onclick="siguienteImagen()">⇨</button>
+        </div>
+        <div class="carousel_bloque">
+          <h2 class="bloque_Titulo">Escenarios</h2>
+          <p class="bloque_Texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </section>
+
+      <section class="main_personajes" id="personajes">
+        <div class="main_personajes_element">
+          <img src="/personaje1-800h.8e2d34e3.png">
+          <div class="carousel_bloque2">
+            <h2 class="bloque_Titulo2">Personajes</h2>
+            <p class="bloque_Texto2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <img src="/personaje2-500w.e220acf1.png">
+        </div>
+
+        <div class="main_personajes_element2" id="personajes">
+          <div class="carousel_bloque2">
+            <h2 class="bloque_Titulo2">Personajes</h2>
+            <p class="bloque_Texto2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <img srcset="/personaje1-250h.96447db9.png 400w,/personaje1-400h.b362b1cb.png 800w" sizes="(max-width: 500px) 500px,
+                                800px" src="/personaje1-400h.b362b1cb.png" alt="Personaje1">
+                        
+            <img srcset="/personaje2-250w.f7fb0d4d.png 400w,/personaje2-300w.dcdaccd5.png 800w" sizes="(max-width: 500px) 500px,
+                    800px" src="/personaje2-300w.dcdaccd5.png" alt="Personaje2">
+        </div>
+      </section>
+
+      <audio autoplay="" loop="">
+        <source src="/sonidoAmbiente.b30a3673.mp3" type="audio/mpeg">
+        <source src="/sonidoAmbiente.2dbedcbf.ogg" type="audio/ogg">
+        Tu navegador no es compatible con la etiqueta de audio
+      </audio> 
+    </main>
+
+
+    <footer class="footer">
+      <img class="footer_logo" src="/logo.5b34b4d1.svg" alt="Logo">
+      <section class="footer_menu">
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Condiciones de uso</a></li>
+        </ul>
+      </section>
+    </footer>
+
+    <script>function anteriorImagen() {
+    let ul = document.querySelector(".images");
+    let cambio = ul.querySelector("li:last-child");
+    ul.prepend(cambio);
+}
+function siguienteImagen() {
+    let ul = document.querySelector(".images");
+    let cambio = ul.querySelector("li");
+    ul.append(cambio);
+}
+function anteriorImagen2() {
+    let ul = document.querySelector(".images2");
+    let cambio = ul.querySelector("li:last-child");
+    ul.prepend(cambio);
+}
+function siguienteImagen2() {
+    let ul = document.querySelector(".images2");
+    let cambio = ul.querySelector("li");
+    ul.append(cambio);
+}
+
+</script>
+  </body>
+</html>
