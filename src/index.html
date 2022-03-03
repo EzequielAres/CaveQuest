@@ -6,16 +6,27 @@
     <link rel="stylesheet" href="./assets/styles/app.scss" />
   </head>
   <body>
+
+    <!-- Header -->
     <header class="header">
+
+      <!-- Logo header -->
       <img class="header_logo" src="./assets/images/logo.svg" alt="Logo">
+
+      <!-- Textos header -->
       <section class="header_menu">
         <ul>
           <li><a href="#escenarios">Escenarios</a></li>
           <li><a href="#personajes">Personajes</a></li>
         </ul>
       </section>
+
     </header>
+
+    <!-- Main -->
     <main>
+
+      <!-- Video -->
       <section class="main_contenedorVideo">
         <video autoplay loop class="video">
           <source src="./assets/images/video2.mp4" type="video/mp4">
@@ -24,18 +35,23 @@
           Su navegador no soporta contenido multimedia
         </video>
       </section>
+
+      <!-- Título -->
       <section class="main_contenedorTitulo">
         <h1 class="main_contenedorTitulo_titulo">CAVE QUEST</h1>
         <h2 class="main_contenedorTitulo_subtitulo">Una aventura de plataformas con estética pixel art </h2>
       </section>
 
-
+      <!-- Escenarios -->
       <section class="main_contenedorCarrusel" id="escenarios">
+
+        <!-- Carrusel -->
         <div id="carousel" class="carousel">
           <button class="arrow prev" onclick="anteriorImagen()">⇦</button>
           <div class="gallery">
             <ul class="images">
-                
+
+                <!-- Imágenes responsive -->
                 <li><img srcset="./assets/images/escenario1-400w.png 400w,
                                 ./assets/images/escenario1-800w.png 800w" 
                         sizes="(max-width: 500px) 500px,
@@ -55,41 +71,55 @@
           </div>
           <button class="arrow next" onclick="siguienteImagen()">⇨</button>
         </div>
+
+        <!-- Texto escenarios -->
         <div class="carousel_bloque">
           <h2 class="bloque_Titulo">Escenarios</h2>
           <p class="bloque_Texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </section>
 
+      <!-- Personajes -->
       <section class="main_personajes" id="personajes">
-        <div class="main_personajes_element">
-          <img src="./assets/images/personaje1-800h.png" >
-          <div class="carousel_bloque2">
-            <h2 class="bloque_Titulo2">Personajes</h2>
-            <p class="bloque_Texto2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <img src="./assets/images/personaje2-500w.png" >
+
+        <!-- Texto personajes -->
+        <div class="tabs_bloque2">
+          <h2 class="bloque_Titulo2">Personajes</h2>
+          <p class="bloque_Texto2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
 
-        <div class="main_personajes_element2" id="personajes">
-          <div class="carousel_bloque2">
-            <h2 class="bloque_Titulo2">Personajes</h2>
-            <p class="bloque_Texto2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <img srcset="./assets/images/personaje1-250h.png 400w,
-                       ./assets/images/personaje1-400h.png 800w" 
-                        sizes="(max-width: 500px) 500px,
-                                800px"
-                        src="./assets/images/personaje1-400h.png"  alt="Personaje1">
-                        
-            <img srcset="./assets/images/personaje2-250w.png 400w,
+        <!-- Tabs personajes -->
+        <div class="contenedorTabs">
+
+          <!-- Botones tabs personajes -->
+          <ul>
+            <li class="list activo">Personaje 1</li>
+            <li class="list">Personaje 2</li>
+          </ul>
+  
+          <!-- Contenedores tabs persoajes -->
+          <div class="contenedorTabs_contenedorPestañas">
+
+            <div class="contenedorTabs_contenedorPestañas_bloque activo">
+              <img srcset="./assets/images/personaje1-250h.png 400w,
+              ./assets/images/personaje1-400h.png 800w" 
+                sizes="(max-width: 500px) 500px,
+                        800px"
+                src="./assets/images/personaje1-400h.png"  alt="Personaje1">
+            </div>
+
+            <div class="contenedorTabs_contenedorPestañas_bloque">
+              <img srcset="./assets/images/personaje2-250w.png 400w,
                     ./assets/images/personaje2-300w.png 800w" 
-            sizes="(max-width: 500px) 500px,
-                    800px"
-            src="./assets/images/personaje2-300w.png"  alt="Personaje2">
-        </div>
+              sizes="(max-width: 500px) 500px,
+                      800px"
+              src="./assets/images/personaje2-300w.png"  alt="Personaje2">
+            </div>
+
+          </div>
       </section>
 
+      <!-- Audio -->
       <audio autoplay loop>
         <source src="./assets/images/sonidoAmbiente.mp3" type="audio/mpeg" />
         <source src="./assets/images/sonidoAmbiente.ogg" type="audio/ogg" />
@@ -97,9 +127,13 @@
       </audio> 
     </main>
 
-
+    <!-- Footer -->
     <footer class="footer">
+
+      <!-- Logo footer -->
       <img class="footer_logo" src="./assets/images/logo.svg" alt="Logo">
+
+      <!-- Textos footer -->
       <section class="footer_menu">
         <ul>
           <li><a href="#">Aviso legal</a></li>
@@ -110,6 +144,9 @@
       </section>
     </footer>
 
+    <script src="./assets/scripts/app.js"></script>
+
+    <!-- Script para cambiar las imágenes del carrusel -->
     <script>
       function anteriorImagen() {
           let ul = document.querySelector(".images");
@@ -119,18 +156,6 @@
 
       function siguienteImagen() {
           let ul = document.querySelector(".images");
-          let cambio = ul.querySelector("li");
-          ul.append(cambio);
-      }
-
-      function anteriorImagen2() {
-          let ul = document.querySelector(".images2");
-          let cambio = ul.querySelector("li:last-child");
-          ul.prepend(cambio);
-      }
-
-      function siguienteImagen2() {
-          let ul = document.querySelector(".images2");
           let cambio = ul.querySelector("li");
           ul.append(cambio);
       }

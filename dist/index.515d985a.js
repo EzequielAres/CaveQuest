@@ -1,0 +1,2 @@
+"use strict";var li=document.querySelectorAll(".list"),bloque=document.querySelectorAll(".contenedorTabs_contenedorPestañas_bloque");li.forEach((function(e,o){li[o].addEventListener("click",(function(){li.forEach((function(e,o){li[o].classList.remove("activo"),bloque[o].classList.remove("activo")})),li[o].classList.add("activo"),bloque[o].classList.add("activo")}))}));
+//# sourceMappingURL=index.515d985a.js.map

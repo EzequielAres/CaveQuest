@@ -1,3 +1,4 @@
+// Con este mixin podremos crear de forma más rápida un flex con alineación horizontal y vertical
 @mixin flex($wrap, $align, $justify) {
     display: flex;
     flex-wrap: $wrap;
@@ -10,12 +11,9 @@
     box-sizing: border-box;
 }
 
-source {
-    width: fit-content;
-}
-
 // CSS HEADER
 
+  // Con esta clase centramos los elementos del header y hacemos que ocupe el 100% de la página, le añadimos un padding y un borde inferior
 .header {
     @include flex(wrap, center, space-between);
     margin-top: 1vh;
@@ -23,11 +21,13 @@ source {
     border-bottom: 1px solid black;
 }
 
+  // Definimos el espaciado de la imagen y su tamaño
 .header_logo {
     padding-left: 4rem;
     width: 14rem;
 }
 
+  // En esta clase, aprovechando el nesting sass colocamos los diferentes elementos del menú, con su espaciado y decoraciones
 .header_menu {
     @include flex(wrap, center, center);
     padding-right: 4rem;
@@ -53,11 +53,9 @@ source {
     }
 }
 
+// CSS VIDEO - Título
 
-
-
-// CSS VIDEO
-
+  // Declaramos la posición y el tamaño del contenedor del vídeo
 .main_contenedorVideo {
     position: absolute;
     width: 100%;
@@ -66,6 +64,7 @@ source {
     border-top: 2px solid brown;
 }
 
+  // Colocamos el video en la posición y tamaño deseados, le añadimos un z-index para que podamos colocar el texto del título por delante del vídeo
 .video {
     position: absolute;
     z-index: -1;
@@ -76,6 +75,11 @@ source {
     object-fit: cover;
 }
 
+source {
+  width: fit-content;
+}
+
+  // Posicionamos el contenedor del texto principal
 .main_contenedorTitulo {
     @include flex(wrap, center, center);
     flex-direction: column;
@@ -83,6 +87,7 @@ source {
     height: 89.3vh;
 }
 
+  // Las dos siguientes clases declaran la decoracion como el color y tamaño del título y su subtitulo
 .main_contenedorTitulo_titulo {
     font-size: 5vw;
     color: white;
@@ -100,34 +105,14 @@ source {
   
 // CSS CARRUSEL ESCENARIOS
 
+  // Declaramos el tamaño del contenedor principal del carrusel y el bloque de texto
 .main_contenedorCarrusel {
   display: flex;
   width: 99.4vw;
   height: 68vh;
 }
 
-.carousel_bloque {
-  width: 40vw;
-  height: 68vh;
-  background-color: #9c7867;
-  
-  @include flex(wrap, center, center);
-  flex-direction: column;
-}
-
-.bloque_Titulo {
-  padding: 0vh 0vw 4vh 0vw;
-  font-size: 3.3vw;
-  text-align: center;
-  font-weight: bold;
-}
-
-.bloque_Texto {
-  text-align: justify;
-  padding: 1vh 2vw;
-  font-size: 1.4vw;
-}
-
+  // Declaramos el tamaño del contenedor del carrusel, las flechas y las imágenes que lo componen
 .carousel {
   position: relative;
   width: 60vw;
@@ -140,6 +125,7 @@ source {
   }
 }
 
+  // Declaramos el posicionamiento y decoración de las flechas del carrusel, además de su comportamiento al hacer focus o al pasar el ratón por encima
 .arrow {
   position: absolute;
   top: 46%;
@@ -161,6 +147,7 @@ source {
   }
 }
 
+  // Con las dos siguientes clases declaramos el espaciado que tienen las flechas con sus respectivos lados
 .prev {
   left: 7px;
 }
@@ -169,6 +156,7 @@ source {
   right: 7px;
 }
 
+ // Definimos el tamaño que tendrá el contenedor de las imágenes
 .gallery {
   width: 100%;
   height: 100%;
@@ -189,37 +177,102 @@ source {
   }
 }
 
-
-// CSS PERSONAJES
-
-.main_personajes_element2 {
-  display: none;
-}
-
-.main_personajes {
-  @include flex(wrap, center, center);
-  width: 100%;
-
-  .carousel_bloque2 {
-    width: 43.6vw;
-    height: 60vh;
-  }
-}
-
-.main_personajes_element {
-  @include flex(wrap, center, center);
-
-  img {
-    height: 40vh;
-  }
-}
-
-.carousel_bloque2 {
+  // Definimos el tamaño del contenedor que tendrá el texto de los escenarios, le aplicamos un color y la disposición (flex)
+.carousel_bloque {
+  width: 40vw;
+  height: 68vh;
   background-color: #9c7867;
+  
   @include flex(wrap, center, center);
   flex-direction: column;
 }
 
+// Las dos siguientes clases especifican la decoración del título y texto de los escenarios
+.bloque_Titulo {
+  padding: 0vh 0vw 4vh 0vw;
+  font-size: 3.3vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bloque_Texto {
+  text-align: justify;
+  padding: 1vh 2vw;
+  font-size: 1.4vw;
+}
+
+// CSS TABS PERSONAJES
+
+  // Declaramos la disposición de los elementos dentro del contenedor perosnajes y su tamaño
+.main_personajes {
+  @include flex(wrap, center, center);
+  width: 100%;
+
+
+  // Declaramos el tamaño y posición del contenedor para las pestañas, luego colocamos las posiciones de los elementos ul e il, también le añadimos un color al elemento con la clase activo
+.contenedorTabs {
+  width: 55.5vw;
+  padding: 1em;
+  height: 60vh;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    li {
+      padding: 1em;
+      margin: 0 1em 0 0;
+      border-radius: 0.5em;
+      box-shadow: 1px 1px 40px;
+      list-style: none;
+      transition: all .4s ease;
+    }
+
+    .activo {
+      background-color: lightblue;
+    }
+  }
+}
+
+  // Declaramos la disposición de los elementos que estén dentro del contenedor de las pestañas
+.contenedorTabs_contenedorPestañas {
+  position: relative;
+  @include flex(wrap, center, center);
+}
+
+  // A continuación le damos algo de decoración y posicionamiento, también le agregamos una transición y lo hacemos opaco por defecto
+.contenedorTabs_contenedorPestañas_bloque {
+  padding: 0.5em;
+  position: absolute;
+  top: 1.5em;
+  box-shadow: 1px 1px 40px;
+  border-radius: 1.5rem;
+  opacity: 0;
+
+  transition: all .4s ease;
+}
+
+  // Le damos visibilidad a la pestaña que tenga la clase activo
+.contenedorTabs_contenedorPestañas_bloque.activo {
+  opacity: 1;
+}
+
+  // Como hemos hecho en la sección anterior, declaramos el tamaño, disposición de elementos y color del bloque de texto de los personajes
+  .tabs_bloque2 {
+    background-color: #9c7867;
+    @include flex(wrap, center, center);
+    flex-direction: column;
+
+    width: 43.6vw;
+    height: 60vh;
+    margin-left: -0.3em;
+  }
+}
+
+  // En las dos siguientes clases declaramos la decoración y espaciado del texto de los personajes
 .bloque_Titulo2 {
   padding: 0vh 0vw 4vh 0vw;
   font-size: 3.3vw;
@@ -235,6 +288,7 @@ source {
 
 // CSS FOOTER
 
+  // Declaramos el tamaño del footer y la disposición que tendrán sus elementos
 .footer {
   @include flex(wrap, center, space-between);
   width: 100%;
@@ -242,11 +296,13 @@ source {
   padding-top: 1vh;
 }
 
+  // Tamaño de la imagen y posicionamiento
 .footer_logo {
   padding-left: 4rem;
   width: 14rem;
 }
 
+  // Posicionamiento y decoración de los diferentes textos del footer
 .footer_menu {
   display: flex;
   flex-wrap: wrap;
@@ -275,8 +331,11 @@ source {
   }
 }
 
+// A continuación declararemos distintos puntos en los que iremos cambiando pequeños elementos para hacer la página responsive
 
 @media (max-width: 1465px) {
+
+  // Cambiamos el tamaño y espaciado de las letras del footer
   .footer_menu {
     padding-right: 1rem;
 
@@ -294,17 +353,8 @@ source {
 }
 
 @media (max-width: 1050px) {
-  .main_personajes_element {  
-    img {
-      height: 28vh;
-    }
-  }
-
-  .footer_logo {
-    padding-left: 1rem;
-    width: 9rem;
-  }
-
+  
+  // Cambiamos el espaciado y el tamaño de las letras en las siguientes clases
   .bloque_Titulo {
     padding: 0vh 0vw 4vh 0vw;
     font-size: 4.3vw;
@@ -324,10 +374,17 @@ source {
     padding: 1vh 2vw;
     font-size: 2vw;
   }
+
+  // Cambiamos el espaciado y tamaño del logo del footer
+  .footer_logo {
+    padding-left: 1rem;
+    width: 9rem;
+  }
 }
 
 @media (max-width: 770px) {
-  // CSS HEADER
+
+  // Cambiamos el espaciado y el tamaño de las letras del header
   .header_menu {
     padding-right: 1rem;
 
@@ -343,6 +400,49 @@ source {
     }
   }
 
+  // Cambiamos el espaciado y el tamaño del logo del header
+  .header_logo {
+    padding-left: 1rem;
+    width: 9rem;
+  }
+
+  // Cambiamos el tamaño de las letras del título y subtítulo
+  .main_contenedorTitulo_titulo {
+    font-size: 8vw;
+  }
+
+  .main_contenedorTitulo_subtitulo {
+      font-size: 3vw;
+  }  
+
+  // Cambiamos el tamaño del contenedor del carrusel y el bloque de texto y cambiamos su disposición para que el bloque esté primero
+  .main_contenedorCarrusel {
+    height: 65vh;
+    flex-direction: column-reverse;
+  }
+
+  // Camibamos el tamaó del contenedor del carrusel y las imagenes
+  .carousel {
+    width: 100%;
+
+    img {
+      height: 100%;
+    } 
+  }
+
+  // Cambiamos el tamaño del bloque de texto de los escenarios
+  .carousel_bloque {
+    width: 100%;
+    height: 43vh;
+  }
+
+  // Cambiamos el espaciado y tamaño del logo del footer
+  .footer_logo {
+    padding-left: 0.3rem;
+    width: 6rem;
+  }
+
+  // Cambiamos el espaciado y el tamaño de las letras del footer
   .footer_menu {
     ul {
       padding-right: 0.3rem;
@@ -356,70 +456,35 @@ source {
         }
     }
   }
-
-  .header_logo {
-    padding-left: 1rem;
-    width: 9rem;
-  }
-
-  .footer_logo {
-    padding-left: 0.3rem;
-    width: 6rem;
-  }
-
-  .main_contenedorTitulo_titulo {
-    font-size: 8vw;
-  }
-
-  .main_contenedorTitulo_subtitulo {
-      font-size: 3vw;
-  }  
-
-  // CSS CORRUSEL
-
-  .main_contenedorCarrusel {
-    height: 65vh;
-    flex-direction: column-reverse;
-  }
-
-  .carousel {
-    width: 100%;
-
-    img {
-      height: 100%;
-    } 
-  }
-
-  .carousel_bloque {
-    width: 100%;
-    height: 43vh;
-  }
-
-  // CSS PERSONAJES
-
-  .main_personajes_element {
-    display: none;
-  }
-
-  .main_personajes_element2 {
-    @include flex(wrap, center, center);
-  }
-
-  .main_personajes .carousel_bloque2 {
-    width: 100%;
-    height: 30vh;
-  }
-/* 
-  .main_personajes_element2 img {
-    height: 30vw;
-  } */
 }
 
 @media (max-width: 550px) {
+
+  // Cambiamos el tamaño del contenedor del carrusel
+  .main_contenedorCarrusel {
+    height: 52vh;
+  }
+
+  // Cambiamos el tamaño del contenedor del bloque de texto de escenarios
+  .carousel_bloque {
+    height: 70vh;
+  }
+
+  // Cambiamos el tamaño de las letras del bloque de texto de escenarios
+  .bloque_Texto {
+    font-size: 2.5vw;
+  }
+
+  .bloque_Texto2 {
+    font-size: 2.5vw;
+  }
+
+  // Hacemos que el logo no esté visible para tener más espacio para el texto del footer
   .footer_logo {
     display: none;
   }
-
+  
+  // Cambiamos la disposición de los textos del footer y su tamaño y espaciado
   .footer_menu {
     display: flex;
     justify-content: center;
@@ -435,22 +500,5 @@ source {
             }
         }
     }
-  }
-
-  .carousel_bloque {
-    height: 70vh;
-  }
-
-  .bloque_Texto {
-    font-size: 2.5vw;
-  }
-
-  .bloque_Texto2 {
-    font-size: 2.5vw;
-  }
-
-  .main_contenedorCarrusel {
-    height: 52vh;
-    flex-direction: column-reverse;
   }
 }
